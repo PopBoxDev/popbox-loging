@@ -1,0 +1,24 @@
+{
+    "name": "popbox/popbox-loging",
+    "description": "Generic Loging for all Popbox Apps",
+    "homepage": "https://github.com/PopBoxDev/popbox-loging",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hendro Steven Tampake",
+            "email": "hendro@popbox.com",
+            "homepage": "https://popbox.asia",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Popbox\\Loging": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^5.3.3"
+    },
+    "minimum-stability": "dev"
+}
