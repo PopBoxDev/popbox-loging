@@ -18,7 +18,7 @@
         }
     },
     "require": {
-        "amphp/artax":"*"
+        "nategood/httpful": "*"
     },
     "minimum-stability": "dev"
 }

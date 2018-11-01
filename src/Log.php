@@ -30,16 +30,11 @@ class Log{
 
     public function write($logs){
         if($this->url & $this->token){
-            $client = new Amp\Artax\DefaultClient();
-            $headers = array(
-                'Content-Type'=>'application/json',
-                'Authorization'=> 'Bearer '.$this->token
-            );
-            $request = (new Amp\Artax\Request($this->url, "POST"))
-                ->withHeaders($headers)
-                ->withBody($logs);       
-            $response = yield $client->request($request);
-            var_dump($response->getStatus(), $response->getReason());
+            $response = \Httpful\Request::post($this->url)
+            ->sendsJson()    
+            ->addHeader('Authorization', 'Bearer '. $this->token)
+            ->body(json_encode($logs))
+            ->send();
         }
     }
 }
