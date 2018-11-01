@@ -30,7 +30,7 @@ class Log{
 
     public function write($logs){
         if($this->url & $this->token){
-            $client = new Amp\Artax\DefaultClient;
+            $client = new Amp\Artax\DefaultClient();
             $headers = array(
                 'Content-Type'=>'application/json',
                 'Authorization'=> 'Bearer '.$this->token
@@ -39,6 +39,7 @@ class Log{
                 ->withHeaders($headers)
                 ->withBody($logs);       
             $response = yield $client->request($request);
+            var_dump($response->getStatus(), $response->getReason());
         }
     }
 }
