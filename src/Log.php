@@ -2,7 +2,8 @@
 
 namespace Popbox\Loging;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as Client;
+use GuzzleHttp\Psr7\Request as Request;
 
 class Log{
 
@@ -33,7 +34,7 @@ class Log{
     public function write($logs){
         if($this->url & $this->token){
             $client = new Client();
-            $request = new \GuzzleHttp\Psr7\Request('POST', $this->url);
+            $request = new Request('POST', $this->url);
             $request->setHeader('Content-Type', 'application/json');
             $request->setHeader('Authorization','Bearer '.$this->token);
             $request->setBody($logs);
