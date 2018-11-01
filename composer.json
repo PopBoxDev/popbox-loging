@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Popbox\\Loging": "src/"
+            "Popbox\\Loging\\": "src/"
         }
     },
     "require": {
