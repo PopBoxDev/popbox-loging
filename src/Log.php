@@ -34,10 +34,11 @@ class Log{
     public function write($logs){
         if($this->url & $this->token){
             $client = new Client();
-            $request = new Request('POST', $this->url);
-            $request->setHeader('Content-Type', 'application/json');
-            $request->setHeader('Authorization','Bearer '.$this->token);
-            $request->setBody($logs);
+            $headers = array(
+                'Content-Type'=>'application/json',
+                'Authorization'=> 'Bearer '.$this->token
+            );
+            $request = new Request('POST', $this->url, $headers,$logs);
             $promise = $client->sendAsync($request)->then(function ($response) {
                 //echo 'I completed! ' . $response->getBody();
             });
