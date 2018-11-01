@@ -21,5 +21,5 @@
         "guzzlehttp/guzzle": "^5.3.3",
         "guzzlehttp/psr7": "*"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
