@@ -2,9 +2,6 @@
 
 namespace Popbox\Loging;
 
-use GuzzleHttp\Client as Client;
-use GuzzleHttp\Psr7\Request as Request;
-
 class Log{
 
     private $url;
@@ -33,16 +30,15 @@ class Log{
 
     public function write($logs){
         if($this->url & $this->token){
-            $client = new Client();
+            $client = new Amp\Artax\DefaultClient;
             $headers = array(
                 'Content-Type'=>'application/json',
                 'Authorization'=> 'Bearer '.$this->token
             );
-            $request = new Request('POST', $this->url, $headers,$logs);
-            $promise = $client->sendAsync($request)->then(function ($response) {
-                //echo 'I completed! ' . $response->getBody();
-            });
-            $promise->wait();
+            $request = (new Amp\Artax\Request($this->url, "POST"))
+                ->withHeaders($headers)
+                ->withBody($logs);       
+            $response = yield $client->request($request);
         }
     }
 }

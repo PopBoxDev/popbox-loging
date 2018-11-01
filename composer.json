@@ -18,8 +18,7 @@
         }
     },
     "require": {
-        "guzzlehttp/guzzle": "^5.3.3",
-        "guzzlehttp/psr7": "*"
+        "amphp/artax":"*"
     },
     "minimum-stability": "dev"
 }
