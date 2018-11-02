@@ -1,5 +1,5 @@
 # PopBox Loging Library
-This library used by all PopBox apps for remote loging.
+This library used by all PopBox Asia apps for remote log
 
 # Install
 composer require popbox/popbox-loging
