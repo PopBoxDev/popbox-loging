@@ -1,4 +1,4 @@
-# PopBox Logger
+# PopBox Loging Library
 This library used by all PopBox apps for remote loging.
 
 # Install
