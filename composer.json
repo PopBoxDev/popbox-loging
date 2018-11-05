@@ -18,7 +18,8 @@
         }
     },
     "require": {
-        "nategood/httpful": "*"
+        "nategood/httpful": "*",
+        "guzzlehttp/guzzle": "^6.3@dev"
     },
     "minimum-stability": "dev"
 }
