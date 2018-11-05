@@ -47,7 +47,7 @@ class Log{
                     ),
             ]);
 
-            $promise = $client->postAsync($this->url, ['json' => $logs ]);
+            $promise = $client->postAsync($this->url, ['json' => json_decode($logs) ]);
             $response = $promise->wait();
         }
     }
