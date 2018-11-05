@@ -33,12 +33,6 @@ class Log{
 
     public function write($logs){
         if($this->url & $this->token){
-            // $response = \Httpful\Request::post($this->url)
-            // ->sendsJson()    
-            // ->addHeader('Authorization', 'Bearer '. $this->token)
-            // ->body(json_encode($logs))
-            // ->send();
-
             $client = new Client([
                 'base_uri' => $this->url, // Base URI is used with relative requests
                 'headers' => array(
@@ -48,7 +42,7 @@ class Log{
             ]);
 
             $promise = $client->postAsync($this->url, ['json' => json_decode($logs) ]);
-            $response = $promise->wait();
+            $promise->wait();
         }
     }
 }
